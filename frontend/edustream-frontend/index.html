@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStream - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo" data-target="landing">
+            <span class="logo-icon">⚡</span> EduStream
+        </div>
+        <nav class="nav-links">
+            <button class="nav-btn active" data-target="landing">Home</button>
+            <button class="nav-btn" data-target="dashboard">Dashboard</button>
+            <button class="nav-btn" data-target="classroom">Live Classroom</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <div id="global-status" class="status-banner hidden" role="status" aria-live="polite"></div>
+
+        <section id="view-auth" class="view-section">
+            <div class="auth-card">
+                <h2>Sign in to EduStream</h2>
+                <p>Use the demo instructor account or create an account for local testing.</p>
+                <form id="login-form" class="auth-form">
+                    <label>Email<input id="login-email" type="email" autocomplete="off" required></label>
+                    <label>Password<input id="login-password" type="password" autocomplete="new-password" required></label>
+                    <button class="cta-btn primary-btn" type="submit">Sign In</button>
+                </form>
+                <button class="text-btn" id="btn-use-demo">Use demo instructor account</button>
+                <p class="auth-note">The starter project seeds this account on first server launch.</p>
+            </div>
+        </section>
+        
+        <section id="view-landing" class="view-section active">
+            <div class="hero-container">
+                <h1 class="hero-title">Next-Gen Real-Time Learning Platforms</h1>
+                <p class="hero-subtitle">Bridge the gap between video streaming, live collaborative workspaces, and automated instant grading engines.</p>
+                <div class="hero-cta">
+                    <button class="cta-btn primary-btn" id="cta-get-started">Launch Dashboard</button>
+                    <button class="cta-btn secondary-btn" id="cta-learn-more">Explore System Architecture</button>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>Live PubSub Streams</h3>
+                    <p>Low-latency synchronization utilizing persistent socket simulations for flawless interaction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Instant Assessment</h3>
+                    <p>Evaluate student knowledge mid-lecture with computational score mapping triggers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>ACID Compliance</h3>
+                    <p>Guaranteed state isolation prevents race-conditions during peak submission surges.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-dashboard" class="view-section">
+            <div class="dashboard-header">
+                <div><h2>Welcome Back, Instructor</h2><p id="session-user" class="room-meta"></p></div>
+                <div class="header-actions"><span class="badge" id="session-role">Role: Instructor</span><button class="back-dashboard-btn" id="btn-logout">Log out</button></div>
+            </div>
+            
+            <div class="metrics-row">
+                <div class="metric-card">
+                    <h4>Active Classrooms</h4>
+                    <p class="metric-val" id="metric-rooms">3</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Connected Students</h4>
+                    <p class="metric-val" id="metric-students">142</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Avg. Score Accuracy</h4>
+                    <p class="metric-val" id="metric-accuracy">87.4%</p>
+                </div>
+            </div>
+
+            <h3>Your Active Enrolled Classrooms</h3>
+            <div class="classrooms-list" id="rooms-list-container"><div class="empty-state" id="dashboard-empty">Loading classrooms…</div>
+                </div>
+        </section>
+
+        <section id="view-classroom" class="view-section">
+            <div class="classroom-header">
+                <div>
+                    <h2 id="current-room-title">Loading Classroom Context...</h2>
+                    <p class="room-meta">Instructor: Prof. Johnson | Status: <span class="live-pulse">● LIVE</span></p>
+                </div>
+                <button class="back-dashboard-btn" id="btn-back-to-dash">← Back to Dashboard</button>
+            </div>
+
+            <div class="workspace-grid">
+                <aside class="workspace-panel roster-panel">
+                    <h3>Connected Roster (<span id="roster-count">0</span>)</h3><div id="roster-loading" class="muted">Loading roster…</div>
+                    <ul class="roster-list" id="ui-roster-list"></ul>
+                    <div id="roster-empty" class="empty-state hidden">No quiz participants yet.</div>
+                    <ul class="roster-list hidden">
+                        </ul>
+                    <div class="panel-actions">
+                        <button class="action-btn panic-btn" id="btn-trigger-quiz">⚡ Trigger Pop Quiz</button>
+                    </div>
+                </aside>
+
+                <div class="workspace-main">
+                    <div class="media-container">
+                        <div class="media-placeholder">
+                            <div class="play-icon">▶</div>
+                            <p>Live Workspace Canvas Interface & Stream Engine Pipe Active</p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-overlay hidden" id="quiz-component">
+                        <div class="quiz-card">
+                            <h3>⚡ Real-Time Pop Quiz Assertion</h3>
+                            <p class="quiz-question">Which constraint model prevents race conditions during concurrent database operations?</p>
+                            <div class="quiz-options">
+                                <label class="option-label"><input type="radio" name="quiz-opt" value="A"> A) Loose NoSQL Eventual Consistency</label>
+                                <label class="option-label"><input type="radio" name="quiz-opt" value="B"> B) Strict Relational ACID Isolation Boundaries</label>
+                                <label class="option-label"><input type="radio" name="quiz-opt" value="C"> C) Client-side LocalStorage Assertions</label>
+                            </div>
+                            <button class="submit-quiz-btn" id="btn-submit-quiz">Submit Evaluation to Server</button>
+                        </div>
+                    </div>
+
+                    <div class="feed-container">
+                        <div class="classroom-summary"><span>Submissions: <strong id="room-submissions">0</strong></span><span>Average Score: <strong id="room-average">0%</strong></span></div><h3>Interactive Live Activity Logs</h3>
+                        <div class="feed-logs" id="activity-logs">
+                            <div class="log-entry system">[SYSTEM]: Stream initialization pipeline established successfully.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 EduStream Platform Architecture Engine. Academic Assignment Deliverable.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

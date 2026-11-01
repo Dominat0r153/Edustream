@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "user_id": "ac587476-c947-4b14-97ba-62bc6ac11344",
+      "email": "prof@edustream.edu",
+      "password": "$2b$10$UzcO8pwXcll2Bk6rSCLPmeLRJAPQM.OhylkqZmEo2Hs0TFVDUa9hS",
+      "role": "instructor",
+      "createdAt": "2026-10-06T15:26:39.735Z"
+    }
+  ],
+  "classrooms": [
+    {
+      "room_id": "b626bcc3-228a-49fc-965c-0cff71b1bf0d",
+      "title": "CS-301: Systems Relational Layer",
+      "instructor_id": "ac587476-c947-4b14-97ba-62bc6ac11344",
+      "createdAt": "2026-10-06T15:26:39.738Z"
+    },
+    {
+      "room_id": "c7af5abf-0801-468a-bd68-f3b36399d24f",
+      "title": "CS-101: Intro to Programming",
+      "instructor_id": "ac587476-c947-4b14-97ba-62bc6ac11344",
+      "createdAt": "2026-10-06T15:26:39.739Z"
+    }
+  ],
+  "grades": [
+    {
+      "grade_id": "4a802bb4-5bd8-472c-a4c7-b2eaf18c04db",
+      "room_id": "b626bcc3-228a-49fc-965c-0cff71b1bf0d",
+      "score_ratio": 0,
+      "student_id": "ac587476-c947-4b14-97ba-62bc6ac11344",
+      "createdAt": "2026-10-07T10:04:50.276Z"
+    },
+    {
+      "grade_id": "ec422b67-444f-40dc-bc8a-e406e497932b",
+      "room_id": "c7af5abf-0801-468a-bd68-f3b36399d24f",
+      "score_ratio": 100,
+      "student_id": "ac587476-c947-4b14-97ba-62bc6ac11344",
+      "createdAt": "2026-10-07T10:05:04.308Z"
+    }
+  ]
+}
