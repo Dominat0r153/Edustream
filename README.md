@@ -24,6 +24,8 @@ npm start
 
 Open `http://localhost:5000`.
 
+Or open `START_EDUSTREAM`
+
 Demo account:
 - Email: `prof@edustream.edu`
 - Password: `password123`
