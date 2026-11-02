@@ -1,4 +1,4 @@
-# EduStream — Week 4 Integrated Full-Stack Application
+# EduStream — Full-Stack Application
 
 This package contains the integrated EduStream front end and Node.js/Express back end from Week 4, extended for Week 5 testing, debugging, and optimization.
 
